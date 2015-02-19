@@ -24,6 +24,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    margin-top: 60px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
