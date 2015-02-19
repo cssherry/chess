@@ -19,9 +19,3 @@ class SlidingPieces < Piece
   end
 
 end
-
-# @board is an instance variable
-# attr_reader
-## allows us to call board (no @)
-# attr_writer
-## we can call self.board = (new_board)

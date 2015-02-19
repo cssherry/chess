@@ -24,7 +24,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -43,7 +43,7 @@ body {
 }
 
 img {
-  width: auto;
+  width: 50%;
 }
 
 iframe {

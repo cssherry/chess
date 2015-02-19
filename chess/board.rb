@@ -23,7 +23,6 @@ OPPOSITES = { 'white' => 'black', 'black' => 'white' }
 
 # Create chess board
 class Board
-  # DO NOT USE CLASS CONSTANT OR IT WILL GET DUPLICATED AND MUTATED DURING DUP: GRID = Array.new(8){Array.new(8)}
   attr_accessor :board
 
   def initialize(populate = true)
@@ -87,7 +86,7 @@ class Board
     opponent_pos.any? { |piece| piece.move_dirs.include?(king_pos[0].position)}
   end
 
-  # after moving, need to call all possible moves for each piece of the opposite color, then make the move on a dupe board, and do in check again.
+  # after moving, need to call all possible moves for each piece of the opposite color
   def checkmate?(piece_color)
     current_team = flatten(OPPOSITES[piece_color])
     current_team.all? do |piece|
