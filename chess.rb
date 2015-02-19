@@ -31,17 +31,12 @@ class Game
 
   def turn(color)
     begin
-      puts "#{current_player[:player]}, you are #{current_player[:color]}. \nWhich position do you want to move from? \nEnter 's' to save the game. Enter 'e' to exit the game."
-      start_position = gets.chomp
-      exit if start_position == 'e'
-      start_position == 's' ? save_game : start_position = parse_answer(start_position)
+      puts "#{current_player[:player]}, you are #{current_player[:color]}. \nWhat's your move? \nEnter 's' to save the game. Enter 'e' to exit the game."
+      move = gets.chomp
+      exit if move == 'e'
+      move == 's' ? save_game : move = parse_answer(move)
 
-      puts "#{current_player[:player]}, which position do you want to move to?"
-      end_position = gets.chomp
-      exit if end_position == 'e'
-      end_position == 's' ? save_game : end_position = parse_answer(end_position)
-
-      board.move(start_position, end_position, color)
+      board.move(move[0], move[1], color)
     rescue WrongStartPositionError => s
       puts "#{s}: Enter a correct start position"
       retry
@@ -56,7 +51,6 @@ class Game
       retry
     end
     board.checkmate?(color)
-
   end
 
   def save_game
@@ -69,15 +63,22 @@ class Game
       retry
   end
 
-
   def parse_answer(string)
+    move = string.split(' ')
+    start_position = parse_position(move[0])
+    end_position = parse_position(move[1])
+    [start_position, end_position]
+  end
+
+  def parse_position(position)
     symbols = Hash['8', 0, '7', 1, '6', 2, '5', 3,
                    '4', 4, '3', 5, '2', 6, '1', 7,
                    'a', 0, 'b', 1, 'c', 2, 'd', 3,
                    'e', 4, 'f', 5, 'g', 6, 'h', 7]
-    next_move = string.split('')
-    next_move[0], next_move[1] = next_move[1], next_move[0]
-    next_move.collect { |array| symbols[array] }
+
+    new_position = position.split('')
+    new_position[0], new_position[1] = new_position[1], new_position[0]
+    new_position.collect { |array| symbols[array] }
   end
 end
 
