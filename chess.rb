@@ -76,6 +76,7 @@ class Game
                    'a', 0, 'b', 1, 'c', 2, 'd', 3,
                    'e', 4, 'f', 5, 'g', 6, 'h', 7]
     next_move = string.split('')
+    next_move[0], next_move[1] = next_move[1], next_move[0]
     next_move.collect { |array| symbols[array] }
   end
 end
