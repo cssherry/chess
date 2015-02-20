@@ -40,7 +40,7 @@ $ load 'chess.rb'
     </li>
     <li>
       <p>
-        Feel free to try out an existing game <code>$ almost_check </code>
+        Feel free to try out an existing game <code>$ l</code> and then <code>$ almost_check </code>
       </p>
       <img src="assets/img/enter_game_name.png" alt="almost_check" />
     </li>
