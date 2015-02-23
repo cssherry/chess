@@ -1,5 +1,5 @@
 # App Academy Projects
-====================
+----------------------
 This was partially completed with [Varun](https://github.com/varunprabhakar14). See my related blog post [here](http://blog.cssherry.com/post/105412733689/w2d2-class-inheritance-and-the-tale-of-iteration) and [here](http://blog.cssherry.com/post/105499834509/w2d3-chess-completed).
 
 ### W2D2 and W2D3
@@ -23,7 +23,6 @@ $ load 'chess.rb'
 
 ## To get started
 <h1 class="centered">How to get started</h1>
-  <hr>
   <p>
     <em>Make sure you have Ruby installed. The best tutorial I found was The best tutorial I've found is this: <a href="http://installrails.com/steps">Ruby Installation Tutorial</a></em>
   </p>
